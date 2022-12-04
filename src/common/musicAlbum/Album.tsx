@@ -28,6 +28,7 @@ const Album = ({ number, coverImageUrl, description }: AlbumProps) => {
         title={description.title}
         artist={description.artist}
         price={description.price}
+        releaseDate={description.releaseDate}
       />
     </div>
   );

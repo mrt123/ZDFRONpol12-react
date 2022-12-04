@@ -1,3 +1,4 @@
+import { daysAgo } from "../dates";
 import AlbumDescriptionEntry from "./AlbumDescriptionEntry";
 
 const albumDescriptionStyles = {
@@ -11,18 +12,28 @@ export interface AlbumDescriptionProps {
   releaseDate?: Date;
 }
 
-const AlbumDescription = ({ title, artist, price }: AlbumDescriptionProps) => {
+const AlbumDescription = ({
+  title,
+  artist,
+  price,
+  releaseDate,
+}: AlbumDescriptionProps) => {
   let priceToDisplay;
   if (price) priceToDisplay = price;
   else priceToDisplay = "N/A";
 
-  // TODO: if releaseDate is present (display it as last AlbumDescriptionEntry)?
+  const releaseDateToDisplay = releaseDate ? daysAgo(releaseDate) : null;
+  const daysSinceRelease =
+    releaseDateToDisplay === null
+      ? null
+      : `released ${releaseDateToDisplay} days ago`;
 
   return (
     <div style={albumDescriptionStyles}>
       <AlbumDescriptionEntry value={title} />
       <AlbumDescriptionEntry value={artist} />
       <AlbumDescriptionEntry value={priceToDisplay} />
+      <AlbumDescriptionEntry value={daysSinceRelease} />
     </div>
   );
 };
