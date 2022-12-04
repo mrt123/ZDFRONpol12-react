@@ -1,5 +1,5 @@
 interface AlbumImageProps {
-  imageUrl: string;
+  imageUrl: string | undefined;
 }
 
 const getCoverImageStyle = (imageUrl: string | undefined) => {

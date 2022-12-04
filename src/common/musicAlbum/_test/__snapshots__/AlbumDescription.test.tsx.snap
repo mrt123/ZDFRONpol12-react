@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlbumDescription 1`] = `
+<div>
+  <div
+    style="margin: 8px;"
+  >
+    <div
+      style="margin: 10px;"
+    >
+      Mam 8 motywacji!
+    </div>
+    <div
+      style="margin: 10px;"
+    >
+      Kamil WG
+    </div>
+    <div
+      style="margin: 10px;"
+    >
+      N/A
+    </div>
+  </div>
+</div>
+`;

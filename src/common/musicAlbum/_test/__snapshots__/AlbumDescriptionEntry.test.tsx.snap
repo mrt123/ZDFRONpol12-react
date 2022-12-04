@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlbumDescriptionEntry 1`] = `
+<div>
+  <div
+    style="margin: 10px;"
+  >
+    testowy item albumu
+  </div>
+</div>
+`;
