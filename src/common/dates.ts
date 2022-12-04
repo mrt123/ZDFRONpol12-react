@@ -7,7 +7,7 @@ export const daysAgo = (date: Date): number => {
   return Math.floor(daysSinceDate);
 };
 
-export const daysAgoPretty = (date: Date | undefined): string => {
+export const daysAgoPretty = (date?: Date): string => {
   const releaseDateToDisplay = date ? daysAgo(date) : null;
   const textToReturn =
     releaseDateToDisplay === null

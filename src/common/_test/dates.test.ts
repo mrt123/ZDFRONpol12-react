@@ -1,4 +1,4 @@
-import { daysAgo } from "../dates";
+import { daysAgo, daysAgoPretty } from "../dates";
 
 jest.useFakeTimers().setSystemTime(new Date("2022/12/03"));
 
@@ -18,6 +18,15 @@ describe("dates.ts", () => {
   });
 
   describe("daysAgoPretty", () => {
-    it("??", () => {});
+    it("when date is defined (checking battle of Grunwald date)", () => {
+      const battleOfGrunwald = new Date("1410/07/15");
+      const returnedText = daysAgoPretty(battleOfGrunwald);
+      expect(returnedText).toEqual("223670 days ago");
+    });
+
+    it("when date is undefined ", () => {
+      const returnedText = daysAgoPretty();
+      expect(returnedText).toEqual("unknown");
+    });
   });
 });
