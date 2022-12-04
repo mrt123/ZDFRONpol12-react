@@ -8,10 +8,15 @@ export interface AlbumDescriptionProps {
   title: string;
   artist: string;
   price?: number;
+  releaseDate?: Date;
 }
 
 const AlbumDescription = ({ title, artist, price }: AlbumDescriptionProps) => {
-  const priceToDisplay = price || "N/A";
+  let priceToDisplay;
+  if (price) priceToDisplay = price;
+  else priceToDisplay = "N/A";
+
+  // TODO: if releaseDate is present (display it as last AlbumDescriptionEntry)?
 
   return (
     <div style={albumDescriptionStyles}>

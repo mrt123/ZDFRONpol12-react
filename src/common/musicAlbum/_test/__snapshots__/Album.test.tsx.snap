@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Album test 1`] = `
+<div>
+  <div
+    style="display: flex; margin: 20px; font-size: 12px; background: rgb(53, 58, 69);"
+  >
+    <div
+      style="padding: 5px; background: black;"
+    >
+      0
+    </div>
+    <div
+      style="width: 100px; height: 100px; background: blue; background-image: url(https://d1csarkz8obe9u.cloudfront.net/posterpreviews/rap-trap-mixtape-cover-art-template-design-42d0a5596257ec487408e1039eac95d7_screen.jpg?ts=1580857100); background-size: contain;"
+    >
+       
+    </div>
+    <div
+      style="margin: 8px;"
+    >
+      <div
+        style="margin: 10px;"
+      >
+        artysta
+      </div>
+      <div
+        style="margin: 10px;"
+      >
+        Kamil WG
+      </div>
+      <div
+        style="margin: 10px;"
+      >
+        N/A
+      </div>
+    </div>
+  </div>
+</div>
+`;

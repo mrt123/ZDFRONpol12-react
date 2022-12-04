@@ -4,7 +4,9 @@ exports[`AlbumImage url = lalala 1`] = `
 <div>
   <div
     style="width: 100px; height: 100px; background: blue; background-image: url(lalala); background-size: contain;"
-  />
+  >
+     
+  </div>
 </div>
 `;
 
@@ -12,6 +14,8 @@ exports[`AlbumImage url = undefined 1`] = `
 <div>
   <div
     style="width: 100px; height: 100px; background: blue; background-image: none; background-size: contain;"
-  />
+  >
+     
+  </div>
 </div>
 `;

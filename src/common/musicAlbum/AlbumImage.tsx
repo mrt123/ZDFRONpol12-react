@@ -13,7 +13,9 @@ const getCoverImageStyle = (imageUrl: string | undefined) => {
 };
 
 const AlbumImage = ({ imageUrl }: AlbumImageProps) => {
-  return <div style={getCoverImageStyle(imageUrl)}></div>;
+  // we use &nbsp; so that JSDOM serializer would not void close div tag
+  // TODO: remove this and instead force JSDOM to close tag properly in test setup
+  return <div style={getCoverImageStyle(imageUrl)}>&nbsp;</div>;
 };
 
 export default AlbumImage;
