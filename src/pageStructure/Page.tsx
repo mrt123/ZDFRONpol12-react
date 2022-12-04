@@ -26,7 +26,7 @@ const Page = () => {
     <div id="page">
       <NavBar />
       <header style={headerStyle}>
-        ZDFRONpol12 <Clock />
+        ZDFRONpol10 <Clock />
         <ClickCounter />
       </header>
       <section style={sectionStyle}>
