@@ -3,7 +3,7 @@
 exports[`AlbumDescriptionEntry 1`] = `
 <div>
   <div
-    style="margin: 10px;"
+    style="margin: 5px; font-size: 11px;"
   >
     testowy item albumu
   </div>

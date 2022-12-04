@@ -1,4 +1,4 @@
-import { daysAgo } from "../dates";
+import { daysAgo, daysAgoPretty } from "../dates";
 import AlbumDescriptionEntry from "./AlbumDescriptionEntry";
 
 const albumDescriptionStyles = {
@@ -22,18 +22,14 @@ const AlbumDescription = ({
   if (price) priceToDisplay = price;
   else priceToDisplay = "N/A";
 
-  const releaseDateToDisplay = releaseDate ? daysAgo(releaseDate) : null;
-  const daysSinceRelease =
-    releaseDateToDisplay === null
-      ? null
-      : `released ${releaseDateToDisplay} days ago`;
+  const daysAgoString = `released: ${daysAgoPretty(releaseDate)}`;
 
   return (
     <div style={albumDescriptionStyles}>
       <AlbumDescriptionEntry value={title} />
       <AlbumDescriptionEntry value={artist} />
       <AlbumDescriptionEntry value={priceToDisplay} />
-      <AlbumDescriptionEntry value={daysSinceRelease} />
+      <AlbumDescriptionEntry value={daysAgoString} />
     </div>
   );
 };

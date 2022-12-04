@@ -6,19 +6,24 @@ exports[`AlbumDescription 1`] = `
     style="margin: 8px;"
   >
     <div
-      style="margin: 10px;"
+      style="margin: 5px; font-size: 11px;"
     >
       Mam 8 motywacji!
     </div>
     <div
-      style="margin: 10px;"
+      style="margin: 5px; font-size: 11px;"
     >
       Kamil WG
     </div>
     <div
-      style="margin: 10px;"
+      style="margin: 5px; font-size: 11px;"
     >
       N/A
+    </div>
+    <div
+      style="margin: 5px; font-size: 11px;"
+    >
+      released: unknown
     </div>
   </div>
 </div>

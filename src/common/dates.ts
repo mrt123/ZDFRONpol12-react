@@ -6,3 +6,13 @@ export const daysAgo = (date: Date): number => {
   const daysSinceDate = secondsSinceDate / 60 / 60 / 24;
   return Math.floor(daysSinceDate);
 };
+
+export const daysAgoPretty = (date: Date | undefined): string => {
+  const releaseDateToDisplay = date ? daysAgo(date) : null;
+  const textToReturn =
+    releaseDateToDisplay === null
+      ? "unknown"
+      : `${releaseDateToDisplay} days ago`;
+
+  return textToReturn;
+};

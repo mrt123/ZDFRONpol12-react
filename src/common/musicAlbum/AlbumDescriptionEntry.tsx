@@ -1,5 +1,6 @@
 const descriptionEntryStyle = {
-  margin: "10px",
+  margin: "5px",
+  fontSize: "11px",
 };
 
 interface AlbumDescriptionEntryProps {
