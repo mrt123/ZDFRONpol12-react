@@ -3,6 +3,7 @@
 exports[`Album test 1`] = `
 <div>
   <div
+    data-testid="Album"
     style="display: flex; margin: 20px; font-size: 12px; background: rgb(53, 58, 69);"
   >
     <div
