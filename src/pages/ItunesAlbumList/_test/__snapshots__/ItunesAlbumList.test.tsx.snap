@@ -8,11 +8,80 @@ exports[`ItunesAlbumList matches snapshot after data is loaded 1`] = `
     Top Albums
   </div>
   <div
-    style="text-align: center; margin-top: 100px;"
+    style="display: flex; margin: 20px; font-size: 12px; background: rgb(53, 58, 69);"
   >
     <div
-      class="loader"
-    />
+      style="padding: 5px; background: black;"
+    >
+      1
+    </div>
+    <div
+      style="width: 100px; height: 100px; background: blue; background-image: url(); background-size: contain;"
+    >
+       
+    </div>
+    <div
+      style="margin: 8px;"
+    >
+      <div
+        style="margin: 5px; font-size: 11px;"
+      >
+        Album1
+      </div>
+      <div
+        style="margin: 5px; font-size: 11px;"
+      >
+        Michael Jackson
+      </div>
+      <div
+        style="margin: 5px; font-size: 11px;"
+      >
+        99000000
+      </div>
+      <div
+        style="margin: 5px; font-size: 11px;"
+      >
+        released: 8624 days ago
+      </div>
+    </div>
+  </div>
+  <div
+    style="display: flex; margin: 20px; font-size: 12px; background: rgb(53, 58, 69);"
+  >
+    <div
+      style="padding: 5px; background: black;"
+    >
+      2
+    </div>
+    <div
+      style="width: 100px; height: 100px; background: blue; background-image: url(); background-size: contain;"
+    >
+       
+    </div>
+    <div
+      style="margin: 8px;"
+    >
+      <div
+        style="margin: 5px; font-size: 11px;"
+      >
+        Killing me softly
+      </div>
+      <div
+        style="margin: 5px; font-size: 11px;"
+      >
+        Fugees
+      </div>
+      <div
+        style="margin: 5px; font-size: 11px;"
+      >
+        N/A
+      </div>
+      <div
+        style="margin: 5px; font-size: 11px;"
+      >
+        released: 9693 days ago
+      </div>
+    </div>
   </div>
 </div>
 `;
