@@ -54,21 +54,33 @@ describe("ItunesAlbumList", () => {
     ) as jest.Mock;
 
     // ACT
-    const { container } = render(<ItunesAlbumList />);
+    const { container, getByText, getAllByTestId } = render(
+      <ItunesAlbumList />
+    );
 
     const loaderElements = container.getElementsByClassName("loader");
 
+    // TODO: test takes 1000+ ms to finish?
     await waitFor(
       () => {
         return expect(loaderElements.length === 0).toEqual(true);
       },
-      {
-        timeout: 13000,
-      }
+      { timeout: 2000 }
     );
 
     // ASSERT
     // We do not test snapshot here, we avoid complex snapshot comparison. Imagine this is the most complex component in a large application.
-    expect(container).toMatchSnapshot();
+
+    expect(container.firstChild).toHaveTextContent("Top Albums");
+
+    const albumElements = getAllByTestId("Album");
+    expect(albumElements.length).toEqual(2);
+
+    const firstAlbumELement = getByText("Album1");
+    expect(firstAlbumELement).toBeInTheDocument();
+
+    // TODO: 2nd album element
+
+    // TODO: check differences in description of 2 albums
   });
 });

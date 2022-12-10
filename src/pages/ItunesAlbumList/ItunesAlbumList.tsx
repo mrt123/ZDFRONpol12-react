@@ -11,7 +11,7 @@ const addDelay = () => {
   return new Promise((resolve) =>
     setTimeout(() => {
       resolve(null);
-    }, 1000)
+    }, 0)
   );
 };
 

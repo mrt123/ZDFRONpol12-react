@@ -21,7 +21,7 @@ export interface AlbumProps {
 
 const Album = ({ number, coverImageUrl, description }: AlbumProps) => {
   return (
-    <div style={albumStyle}>
+    <div style={albumStyle} data-testid="Album">
       <div style={numberStyle}>{number}</div>
       <AlbumImage imageUrl={coverImageUrl} />
       <AlbumDescription
