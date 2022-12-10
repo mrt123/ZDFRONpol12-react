@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItunesAlbumList matches snapshot after data is loaded 1`] = `
+<div>
+  <div
+    style="margin-bottom: 20px; text-align: center;"
+  >
+    Top Albums
+  </div>
+  <div
+    style="text-align: center; margin-top: 100px;"
+  >
+    <div
+      class="loader"
+    />
+  </div>
+</div>
+`;
+
+exports[`ItunesAlbumList matches snapshot when data is loading 1`] = `
+<div>
+  <div
+    style="margin-bottom: 20px; text-align: center;"
+  >
+    Top Albums
+  </div>
+  <div
+    style="text-align: center; margin-top: 100px;"
+  >
+    <div
+      class="loader"
+    />
+  </div>
+</div>
+`;
