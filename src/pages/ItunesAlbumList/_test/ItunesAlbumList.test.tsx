@@ -1,4 +1,4 @@
-import { render, waitFor } from "@testing-library/react";
+import { render, waitFor, screen } from "@testing-library/react";
 import ItunesAlbumList from "../ItunesAlbumList";
 import { ItunesAlbumDataEntry } from "../itunesDataTransformer";
 
@@ -8,18 +8,18 @@ describe("ItunesAlbumList", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot after data is loaded", async () => {
+  it("fires a single fetch, and renders two albums", async () => {
     // ARRANGE
     const rawAlbumEntires: ItunesAlbumDataEntry[] = [
       {
         "im:name": {
-          label: "Album1",
+          label: "Slim Shady",
         },
         "im:artist": {
-          label: "Michael Jackson",
+          label: "Eminem",
         },
         "im:releaseDate": {
-          label: "1999/05/01",
+          label: "2000/04/18",
         },
         "im:price": {
           attributes: {
@@ -61,26 +61,34 @@ describe("ItunesAlbumList", () => {
     const loaderElements = container.getElementsByClassName("loader");
 
     // TODO: test takes 1000+ ms to finish?
-    await waitFor(
-      () => {
-        return expect(loaderElements.length === 0).toEqual(true);
-      },
-      { timeout: 2000 }
-    );
+    await waitFor(() => expect(loaderElements.length === 0).toEqual(true), {
+      timeout: 2000,
+    });
 
     // ASSERT
     // We do not test snapshot here, we avoid complex snapshot comparison. Imagine this is the most complex component in a large application.
+    expect(window.fetch).toHaveBeenCalledTimes(1);
 
     expect(container.firstChild).toHaveTextContent("Top Albums");
 
-    const albumElements = getAllByTestId("Album");
+    const albumElements = screen.getAllByTestId("Album");
     expect(albumElements.length).toEqual(2);
 
-    const firstAlbumELement = getByText("Album1");
-    expect(firstAlbumELement).toBeInTheDocument();
+    const slimShadyAlbumElement = getByText("Slim Shady");
+    expect(slimShadyAlbumElement).toBeInTheDocument();
 
-    // TODO: 2nd album element
+    const killingMeSoftlyAlbumElement = getByText("Killing me softly");
+    expect(killingMeSoftlyAlbumElement).toBeInTheDocument();
 
-    // TODO: check differences in description of 2 albums
+    expect(albumElements[0].contains(slimShadyAlbumElement)).toEqual(true);
+    expect(albumElements[1].contains(killingMeSoftlyAlbumElement)).toEqual(
+      true
+    );
+
+    expect(albumElements[0]).toHaveTextContent("99000000");
+    expect(albumElements[1]).toHaveTextContent("N/A");
+
+    expect(albumElements[0]).toHaveTextContent("Slim Shady");
+    expect(albumElements[1]).toHaveTextContent("Fugees");
   });
 });
