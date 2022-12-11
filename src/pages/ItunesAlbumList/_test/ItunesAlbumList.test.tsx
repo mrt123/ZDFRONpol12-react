@@ -47,16 +47,16 @@ describe("ItunesAlbumList", () => {
       },
     };
 
-    window.fetch = jest.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve(rawAlbumTestData),
-      })
-    ) as jest.Mock;
+    const fakeHttpResponse = {
+      json: () => Promise.resolve(rawAlbumTestData),
+    };
+
+    const fakeFetch = () => Promise.resolve(fakeHttpResponse);
+
+    window.fetch = jest.fn(fakeFetch) as jest.Mock;
 
     // ACT
-    const { container, getByText, getAllByTestId } = render(
-      <ItunesAlbumList />
-    );
+    const { container, getByText } = render(<ItunesAlbumList />);
 
     const loaderElements = container.getElementsByClassName("loader");
 
