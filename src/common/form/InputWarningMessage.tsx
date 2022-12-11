@@ -11,7 +11,11 @@ interface InputWarningMessageProps {
 
 const InputWarningMessage = ({ message, show }: InputWarningMessageProps) => {
   const messageToRender = show ? message : null;
-  return <div style={warningMessageStyle}>{messageToRender}</div>;
+  return (
+    <div style={warningMessageStyle} data-testid="InputWarningMessage">
+      {messageToRender}
+    </div>
+  );
 };
 
 export default InputWarningMessage;
